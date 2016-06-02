@@ -1,4 +1,4 @@
-# Python image names and `Dockerfile` links
+# Python images and `Dockerfile` links
 The Python repository provides essential base images to serve as the starting point for Python developers on Docker.  The supported Python releases are 3.5 (latest), 3.4, 3.3 and 2.7.  All images are built on Debian 8 (code named jessie) except for the apline images which are built on Alpine Linux.
 
 An image name is specified by the combination of repository name and tag name.  For example the image name for Python 3.4 is `python:3.4`. If you dont care about the particular Python release then omit the tag name and use the default image name `python`.  This default image name is a synonym for the image `python:latest` which is currently release Python 3.5 on Debian 8.
