@@ -1,24 +1,36 @@
-# Supported tags and respective `Dockerfile` links
+# Python images and `Dockerfile` links
+The Python repository provides essential base images to serve as the starting point for Python developers on Docker.  The supported Python releases are 3.5 (latest), 3.4, 3.3 and 2.7.  All images are built on Debian 8 (code named jessie) except for the apline images which are built on Alpine Linux.
 
--	[`2.7.11`, `2.7`, `2` (*2.7/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/2.7/Dockerfile)
--	[`2.7.11-onbuild`, `2.7-onbuild`, `2-onbuild` (*2.7/onbuild/Dockerfile*)](https://github.com/docker-library/python/blob/7663560df7547e69d13b1b548675502f4e0917d1/2.7/onbuild/Dockerfile)
--	[`2.7.11-slim`, `2.7-slim`, `2-slim` (*2.7/slim/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/2.7/slim/Dockerfile)
--	[`2.7.11-alpine`, `2.7-alpine`, `2-alpine` (*2.7/alpine/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/2.7/alpine/Dockerfile)
--	[`2.7.11-wheezy`, `2.7-wheezy`, `2-wheezy` (*2.7/wheezy/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/2.7/wheezy/Dockerfile)
+An image name is specified by the combination of repository name and tag name.  For example the image name for Python 3.4 is `python:3.4`. If you dont care about the particular Python release then omit the tag name and use the default image name `python`.  This default image name is a synonym for the image `python:latest` which is currently release Python 3.5 on Debian 8.
+
+For most use cases the best tag name is the Python release number `python:3.5`, `python:3.4`, `python:3.3` or `python:2.7`.  Use the slim tags for a smaller Debian Linux base image.  Use the apline tag for an even smaller Apline Linux base image.  The onbuild images exemplify the use of the Dockerfile onbuild tag for building child images.
+
+the recommended image name for Python 3.5 is `python:3.5`.  The complete list of supported tags is
+-	[`3.5.1`, `3.5`, `3`, `latest` (*3.5/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/3.5/Dockerfile)
+-	[`3.5.1-onbuild`, `3.5-onbuild`, `3-onbuild`, `onbuild` (*3.5/onbuild/Dockerfile*)](https://github.com/docker-library/python/blob/0fa3202789648132971160f686f5a37595108f44/3.5/onbuild/Dockerfile)
+-	[`3.5.1-slim`, `3.5-slim`, `3-slim`, `slim` (*3.5/slim/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/3.5/slim/Dockerfile)
+-	[`3.5.1-alpine`, `3.5-alpine`, `3-alpine`, `alpine` (*3.5/alpine/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/3.5/alpine/Dockerfile)
+
+the recommended image name for Python 3.4 is `python:3.4`.  The complete list of supported tags is
+-	[`3.4.4-onbuild`, `3.4-onbuild` (*3.4/onbuild/Dockerfile*)](https://github.com/docker-library/python/blob/7663560df7547e69d13b1b548675502f4e0917d1/3.4/onbuild/Dockerfile)
+-	[`3.4.4-slim`, `3.4-slim` (*3.4/slim/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/3.4/slim/Dockerfile)
+-	[`3.4.4-alpine`, `3.4-alpine` (*3.4/alpine/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/3.4/alpine/Dockerfile)
+-	[`3.4.4-wheezy`, `3.4-wheezy` (*3.4/wheezy/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/3.4/wheezy/Dockerfile)
+
+the recommended image name for Python 3.3 is `python:3.3`.  The complete list of supported tags is
 -	[`3.3.6`, `3.3` (*3.3/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/3.3/Dockerfile)
 -	[`3.3.6-onbuild`, `3.3-onbuild` (*3.3/onbuild/Dockerfile*)](https://github.com/docker-library/python/blob/7663560df7547e69d13b1b548675502f4e0917d1/3.3/onbuild/Dockerfile)
 -	[`3.3.6-slim`, `3.3-slim` (*3.3/slim/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/3.3/slim/Dockerfile)
 -	[`3.3.6-alpine`, `3.3-alpine` (*3.3/alpine/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/3.3/alpine/Dockerfile)
 -	[`3.3.6-wheezy`, `3.3-wheezy` (*3.3/wheezy/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/3.3/wheezy/Dockerfile)
 -	[`3.4.4`, `3.4` (*3.4/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/3.4/Dockerfile)
--	[`3.4.4-onbuild`, `3.4-onbuild` (*3.4/onbuild/Dockerfile*)](https://github.com/docker-library/python/blob/7663560df7547e69d13b1b548675502f4e0917d1/3.4/onbuild/Dockerfile)
--	[`3.4.4-slim`, `3.4-slim` (*3.4/slim/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/3.4/slim/Dockerfile)
--	[`3.4.4-alpine`, `3.4-alpine` (*3.4/alpine/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/3.4/alpine/Dockerfile)
--	[`3.4.4-wheezy`, `3.4-wheezy` (*3.4/wheezy/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/3.4/wheezy/Dockerfile)
--	[`3.5.1`, `3.5`, `3`, `latest` (*3.5/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/3.5/Dockerfile)
--	[`3.5.1-onbuild`, `3.5-onbuild`, `3-onbuild`, `onbuild` (*3.5/onbuild/Dockerfile*)](https://github.com/docker-library/python/blob/0fa3202789648132971160f686f5a37595108f44/3.5/onbuild/Dockerfile)
--	[`3.5.1-slim`, `3.5-slim`, `3-slim`, `slim` (*3.5/slim/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/3.5/slim/Dockerfile)
--	[`3.5.1-alpine`, `3.5-alpine`, `3-alpine`, `alpine` (*3.5/alpine/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/3.5/alpine/Dockerfile)
+
+the recommended image name for Python 2.7 is `python:2.7`.  The complete list of supported tags is
+-	[`2.7.11`, `2.7`, `2` (*2.7/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/2.7/Dockerfile)
+-	[`2.7.11-onbuild`, `2.7-onbuild`, `2-onbuild` (*2.7/onbuild/Dockerfile*)](https://github.com/docker-library/python/blob/7663560df7547e69d13b1b548675502f4e0917d1/2.7/onbuild/Dockerfile)
+-	[`2.7.11-slim`, `2.7-slim`, `2-slim` (*2.7/slim/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/2.7/slim/Dockerfile)
+-	[`2.7.11-alpine`, `2.7-alpine`, `2-alpine` (*2.7/alpine/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/2.7/alpine/Dockerfile)
+-	[`2.7.11-wheezy`, `2.7-wheezy`, `2-wheezy` (*2.7/wheezy/Dockerfile*)](https://github.com/docker-library/python/blob/9383f7d4d2f96068e8957651aa3588fee8b48f71/2.7/wheezy/Dockerfile)
 
 [![](https://badge.imagelayers.io/python:latest.svg)](https://imagelayers.io/?images=python:2.7.11,python:2.7.11-onbuild,python:2.7.11-slim,python:2.7.11-alpine,python:2.7.11-wheezy,python:3.3.6,python:3.3.6-onbuild,python:3.3.6-slim,python:3.3.6-alpine,python:3.3.6-wheezy,python:3.4.4,python:3.4.4-onbuild,python:3.4.4-slim,python:3.4.4-alpine,python:3.4.4-wheezy,python:3.5.1,python:3.5.1-onbuild,python:3.5.1-slim,python:3.5.1-alpine)
 
